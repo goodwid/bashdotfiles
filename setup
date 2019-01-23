@@ -1,0 +1,7 @@
+BASEDIR=~/bashdot
+
+ln -s $BASEDIR/bashrc ~/.bashrc
+ln -s $BASEDIR/bash_aliases ~/.bash_aliases
+ln -s $BASEDIR/bash_gitprompt ~/.bash_gitprompt
+ln -s $BASEDIR/bash_profile ~/.bash_profile
+ln -s $BASEDIR/bash_prompt ~/.bash_prompt
