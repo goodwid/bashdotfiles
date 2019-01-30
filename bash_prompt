@@ -13,10 +13,10 @@ PS1=$prompt
 
 if [ -f ~/.bash_gitprompt ]; then
 	source ~/.bash_gitprompt
-    function gitprompton() {
+    function gpron() {
 	    PS1=\`parse_git_branch\`$prompt
     }
-    function gitpromptoff() {
+    function gproff() {
         PS1=$prompt
     }
     gitprompton
