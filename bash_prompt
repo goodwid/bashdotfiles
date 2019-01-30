@@ -19,5 +19,5 @@ if [ -f ~/.bash_gitprompt ]; then
     function gproff() {
         PS1=$prompt
     }
-    gitprompton
+    gpron
 fi 

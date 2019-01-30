@@ -1,5 +1,4 @@
 {
-  "editor.minimap.enabled": false,
   "files.associations": {
     "bash*": "shellscript"
   }
