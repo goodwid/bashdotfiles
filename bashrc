@@ -107,4 +107,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-[ -f .bash_personal ] && . ~/.bash_personal
+[ -s ~/.bash_personal ] && . ~/.bash_personal

@@ -3,28 +3,21 @@
 promptreset="\[\e[0m\]"
 prompthost="\[\e[1;34m\]\h$promptreset"
 promptremainder="\A \W \!"
-promptroot="\[\e[33;41;1m\]"
+prompt="$prompthost $promptremainder> "
+if [ "${USER}" == "root" ]; then
+    promptroot="\[\e[33;41;1m\]"
+    prompt="$prompthost $promptroot$promptremainder\$$promptreset "
+fi
 
-function buildprompt() {
-    prompt="$prompthost $promptremainder> "
-    if [ "${USER}" == "root" ]; then
-        prompt="$prompthost $promptroot$promptremainder\$$promptreset "
-    fi
-
-    PS1=$prompt
-}
-
-buildprompt
+PS1=$prompt
 
 if [ -f ~/.bash_gitprompt ]; then
 	source ~/.bash_gitprompt
     function gitprompton() {
-	    prompthost="\`parse_git_branch\`$prompthost"
-        buildprompt
+	    PS1=\`parse_git_branch\`$prompt
     }
     function gitpromptoff() {
-        prompthost="\[\e[1;34m\]\h$promptreset"
-        buildprompt
+        PS1=$prompt
     }
     gitprompton
 fi 

@@ -4,7 +4,11 @@ function parse_git_branch() {
 	if [ ! "${BRANCH}" == "" ]
 	then
 		STAT=`parse_git_dirty`
+		# sets the git status in the prompt
 		echo -e "[${BRANCH}${STAT}] "
+		# Sets the git status in the terminal title.
+		# echo -e "\e]2;${BRANCH}${STAT}\a"
+
 	else
 		echo ""
 	fi
