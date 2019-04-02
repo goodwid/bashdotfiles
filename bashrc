@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=32000
+HISTFILESIZE=32000
 LESS="-b20 -deriQswP?pb[%pb\%] .?e(EOF) .?bbbyte %bb.?s/%s.?lb, line %lb.?L/%L .?n?f (%f?m (%i/%m).?x, next\: %x .)..:e?f(%f?m (%i/%m).?x, next\: %x .)..%t$0"
 
 # check the window size after each command and, if necessary,
@@ -66,9 +66,6 @@ if [ -f ~/.bash_prompt ]; then
 else
     PS1="\h \A \W \!> "
 fi
-
-
-
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
