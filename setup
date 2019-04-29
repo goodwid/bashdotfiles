@@ -1,7 +1,35 @@
-BASEDIR=~/bashdot
+#!/bin/sh
 
-ln -s $BASEDIR/bashrc ~/.bashrc
-ln -s $BASEDIR/bash_aliases ~/.bash_aliases
-ln -s $BASEDIR/bash_gitprompt ~/.bash_gitprompt
-ln -s $BASEDIR/bash_profile ~/.bash_profile
-ln -s $BASEDIR/bash_prompt ~/.bash_prompt
+function usage() {
+  echo "\nUsage: $0 <directory>, where directory is where you cloned the repository, or use -c for the current dir.\n"
+}
+
+if [ $# -eq 0 ]; then
+  usage
+  exit 1
+fi
+
+function setup() {
+  ln -s $BASEDIR/bashrc ~/.bashrc
+  ln -s $BASEDIR/bash_aliases ~/.bash_aliases
+  ln -s $BASEDIR/bash_gitprompt ~/.bash_gitprompt
+  ln -s $BASEDIR/bash_profile ~/.bash_profile
+  ln -s $BASEDIR/bash_prompt ~/.bash_prompt
+}
+
+while getopts "c" optname
+  do
+    case "$optname" in
+      "c")
+        echo -e "Using current directory.. \n"
+        BASEDIR=$(pwd)
+        setup
+        ;;
+
+      ":")
+        echo "Using the supplied directory"
+        BASEDIR=$1
+        setup
+        ;;
+    esac
+  done
