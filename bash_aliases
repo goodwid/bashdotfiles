@@ -13,6 +13,9 @@ alias cd..='cd ..'
 alias lll='ls -l |less'
 alias bindir='ls -la ~/bin'
 alias junk='cd ~/junk'
+alias ldir='ls -la |grep ^d'
+alias l.='ls -ld .*'
+alias cdl=''
 
 #
 # git aliases
@@ -20,6 +23,9 @@ alias junk='cd ~/junk'
 
 alias ga='git add -A'
 alias gc='git commit -m'
+alias gcl='git clone'
+alias gco='git checkout'
+alias gpr='git prune'
 alias gd='git diff'
 alias gp='git push'
 alias gpo='git push origin'
@@ -47,21 +53,24 @@ alias 102='cd $code/codefellows/102'
 alias 301='cd $code/codefellows/301'
 alias fsjs='cd $code/acl/fsjsspring2018'
 alias new-react='cp -rT ~skeleton/react .'
+alias npmls='npm ls -g --depth=0'
 
 #
 # work
 #
-
+applab=$code/appLab
 alias code-term='terminator -l coding'
-alias applab='cd $code/appLab'
-alias merc='cd $code/appLab/mercury'
-alias merc-app='cd $code/appLab/mercury/packages/app'
-alias merc-biz='cd $code/appLab/mercury/packages/biz'
-alias merc-cordova='cd $code/appLab/mercury/packages/app/cordova'
-alias jdre='cd $code/appLab/JDRE'
-alias yoyo='cd $code/appLab/yoyochinese'
-alias yo-app='cd $code/appLab/yoyochinese/packages/app'
-
+alias applab='cd $applab'
+alias merc='cd $applab/mercury'
+alias merc-app='cd $applab/mercury/packages/app'
+alias merc-biz='cd $applab/mercury/packages/biz'
+alias merc-admin='cd $applab/mercury/packages/admin'
+alias merc-cor='cd $applab/mercury/packages/app/cordova'
+alias jdre='cd $applab/JDRE'
+alias yoyo='cd $applab/yoyochinese'
+alias yo-app='cd $applab/yoyochinese/packages/app'
+alias yo-cor='cd $applab/yoyochinese/packages/app/cordova'
+alias start-ssl='yarn start --https --cert ~/wds-keys/servercert.pem --key ~/wds-keys/serverkey.pem'
 
 alias h='history 40'
 alias j='jobs'
