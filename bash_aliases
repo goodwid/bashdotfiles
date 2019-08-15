@@ -6,7 +6,6 @@ alias c.='code .'
 #
 # directory aliases
 #
-alias ls='ls -N --color'
 alias ll='ls -l'
 alias lla='ls -la'
 alias cd..='cd ..'
@@ -54,23 +53,29 @@ alias 301='cd $code/codefellows/301'
 alias fsjs='cd $code/acl/fsjsspring2018'
 alias new-react='cp -rT ~skeleton/react .'
 alias npmls='npm ls -g --depth=0'
+alias cplug='cordova plugins'
+alias cplat='cordova platforms'
 
 #
 # work
 #
 applab=$code/appLab
-alias code-term='terminator -l coding'
+alias ct='terminator -l coding'
 alias applab='cd $applab'
 alias merc='cd $applab/mercury'
 alias merc-app='cd $applab/mercury/packages/app'
 alias merc-biz='cd $applab/mercury/packages/biz'
 alias merc-admin='cd $applab/mercury/packages/admin'
 alias merc-cor='cd $applab/mercury/packages/app/cordova'
+alias care='cd $applab/caregiver'
+alias care-prov='cd $applab/caregiver/packages/provider'
+alias care-client='cd $applab/caregiver/packages/client'
+alias care-admin='cd $applab/caregiver/packages/admin'
 alias jdre='cd $applab/JDRE'
-alias yoyo='cd $applab/yoyochinese'
-alias yo-app='cd $applab/yoyochinese/packages/app'
-alias yo-cor='cd $applab/yoyochinese/packages/app/cordova'
-alias start-ssl='yarn start --https --cert ~/wds-keys/servercert.pem --key ~/wds-keys/serverkey.pem'
+alias yoyo='cd $applab/yoyochinese/client'
+alias yo-app='cd $applab/yoyochinese/client/packages/app'
+alias yo-cor='cd $applab/yoyochinese/client/packages/app/cordova'
+alias start-ssl='yarn start --https --cert $applab/wds-keys/servercert.pem --key $applab/wds-keys/serverkey.pem'
 
 alias h='history 40'
 alias j='jobs'
