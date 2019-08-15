@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
 function usage() {
-  echo "\nUsage: $0 <directory>, where directory is where you cloned the repository, or use -c for the current dir.\n"
+  echo -e "\nUsage: $0 <directory>\n\nDirectory is where you cloned the repository, or use -c for the current dir.\n"
 }
 
 if [ $# -eq 0 ]; then
@@ -10,7 +10,7 @@ if [ $# -eq 0 ]; then
 fi
 
 function setup() {
-  ln -s $BASEDIR/bashrc ~/.bashrc
+  ln -s $BASEDIR/bashrc ~/.bashrcmusic1234@my.uri.edu
   ln -s $BASEDIR/bash_aliases ~/.bash_aliases
   ln -s $BASEDIR/bash_gitprompt ~/.bash_gitprompt
   ln -s $BASEDIR/bash_profile ~/.bash_profile
