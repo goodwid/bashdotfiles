@@ -3,23 +3,34 @@ alias docs='cd ~/Documents'
 alias confignode='./configure --prefix=$HOME/.node'
 alias mqtt_hass='mosquitto_sub -h 192.168.1.20 -t homeassist/# -v'
 alias c.='code .'
+alias notes='code ~/Sync/Notes'
 #
 # directory aliases
 #
-alias ll='ls -l'
-alias lla='ls -la'
+if [ "$OS" == "Linux" ]; then
+	alias ls='ls --color=always -N'
+fi
+alias ll='colorls -l'
+alias lla='colorls -la'
 alias cd..='cd ..'
-alias lll='ls -l |less'
+alias lll='colorls -l |less'
 alias bindir='ls -la ~/bin'
 alias junk='cd ~/junk'
 alias ldir='ls -la |grep ^d'
 alias l.='ls -ld .*'
 alias cdl=''
+function cds { cd "../$1" }
+
+#
+# vm management
+#
+
+alias ap-up='vmrun start nogui ~/vmware/apollo/apollo.vmx'
+alias ap-down='vmrun stop ~/vmware/apollo/apollo.vmx'
 
 #
 # git aliases
 #
-
 alias ga='git add -A'
 alias gc='git commit -m'
 alias gcl='git clone'
@@ -55,13 +66,15 @@ alias new-react='cp -rT ~skeleton/react .'
 alias npmls='npm ls -g --depth=0'
 alias cplug='cordova plugins'
 alias cplat='cordova platforms'
+alias fl='bundle exec fastlane'
 
 #
 # work
 #
 applab=$code/appLab
-alias ct='terminator -l coding'
+alias ct='terminator -l coding -T'
 alias applab='cd $applab'
+alias harc='cd $applab/harc'
 alias merc='cd $applab/mercury'
 alias merc-app='cd $applab/mercury/packages/app'
 alias merc-biz='cd $applab/mercury/packages/biz'
@@ -79,6 +92,8 @@ alias care='cd $applab/caregiver-go'
 alias care-admin='cd $applab/caregiver-go/packages/admin'
 alias care-client='cd $applab/caregiver-go/packages/client'
 alias care-prov='cd $applab/caregiver-go/packages/provider'
+alias petsem='cd $applab/pcts'
+
 
 alias start-ssl='yarn start --https --cert ~/wds-keys/servercert.pem --key ~/wds-keys/serverkey.pem'
 
