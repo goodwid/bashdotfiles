@@ -9,12 +9,22 @@ if [ $# -eq 0 ]; then
   exit 1
 fi
 
+function link_file() {
+  file=$1
+  if [ -e ~/.$file ]; then
+    echo "backing up original ~/.$file to ~/.$file.orig "
+    mv ~/.$file ~/.$file.orig
+  fi
+  ln -s $BASEDIR/$file ~/.$file
+  echo "Linking .$file"
+}
+
 function setup() {
-  ln -s $BASEDIR/bashrc ~/.bashrc
-  ln -s $BASEDIR/bash_aliases ~/.bash_aliases
-  ln -s $BASEDIR/bash_gitprompt ~/.bash_gitprompt
-  ln -s $BASEDIR/bash_profile ~/.bash_profile
-  ln -s $BASEDIR/bash_prompt ~/.bash_prompt
+  # files=(bashrc bash_aliases bash_gitprompt bash_profile bash_prompt)
+  files=(foo bar)
+  for f in ${files[@]}; do
+    link_file ${f}
+  done
 }
 
 while getopts "c" optname
