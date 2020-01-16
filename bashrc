@@ -106,3 +106,16 @@ if ! shopt -oq posix; then
 fi
 
 [ -s ~/.bash_personal ] && . ~/.bash_personal
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/goodwid/.sdkman"
+[[ -s "/home/goodwid/.sdkman/bin/sdkman-init.sh" ]] && source "/home/goodwid/.sdkman/bin/sdkman-init.sh"
+
+# added by travis gem
+[ -f /home/goodwid/.travis/travis.sh ] && source /home/goodwid/.travis/travis.sh

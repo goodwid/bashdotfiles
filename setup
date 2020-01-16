@@ -20,8 +20,7 @@ function link_file() {
 }
 
 function setup() {
-  # files=(bashrc bash_aliases bash_gitprompt bash_profile bash_prompt)
-  files=(foo bar)
+  files=(bashrc bash_aliases bash_gitprompt bash_profile bash_prompt)
   for f in ${files[@]}; do
     link_file ${f}
   done

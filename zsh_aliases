@@ -1,0 +1,4 @@
+alias vish='vi ~/.zshrc'
+alias vial='vi ~/.zsh_aliases'
+alias vibl='vi ~/.bash_aliases'
+alias newdot='source ~/.zshrc'
